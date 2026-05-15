@@ -6,7 +6,7 @@ from handstand_rl.envs.ant_stand_env import AntStandEnv
 import os
 import csv
 
-# === CSV Logger Setup ===
+# CSV Logger Setup 
 log_path = os.path.join(".", "ant_performance_log.csv")
 log_file = open(log_path, mode="w+", newline="")
 log_writer = csv.writer(log_file)
@@ -27,7 +27,7 @@ model = PPO(
 )
 
 # === Train the PPO Model ===
-model.learn(total_timesteps=100000)
+model.learn(total_timesteps=1000000)
 
 # === Save Trained Agent ===
 model.save("ppo_ant_stand")
